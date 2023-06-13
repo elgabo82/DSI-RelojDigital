@@ -12,7 +12,9 @@
         <div class="contenedor">
             <div class="reloj">
                 <span id="hrs">00</span>
+                <span>:</span>
                 <span id="min">00</span>
+                <span>:</span>
                 <span id="seg">00</span>
             </div>
         </div>
@@ -23,17 +25,19 @@
         let min = document.getElementById("min");
         let seg = document.getElementById("seg");
 
-        setInterval(
-            ()=> {
-                let tiempoActual = new Date();
-                hrs.innerHTML = (tiempoActual.getHours() < 10 ? "0": "") 
-                    + tiempoActual.getHours();
-                min.innerHTML = (tiempoActual.getMinutes() < 10 ? "0": "") +
-                    tiempoActual.getMinutes();
-                seg.innerHTML = (tiempoActual.getSeconds() < 10 ? "0": "") +
-                    tiempoActual.getSeconds();
-            }, 1000
-        );
+        
+        setInterval(()=>{
+            let tiempoActual = new Date();
+
+            hrs.innerHTML = (tiempoActual.getHours() < 10 ? "0" : "")
+                + tiempoActual.getHours();
+            min.innerHTML = (tiempoActual.getMinutes() < 10 ? "0": "") +
+                tiempoActual.getMinutes();
+            seg.innerHTML = (tiempoActual.getSeconds() < 10 ? "0" : "") +
+                tiempoActual.getSeconds();
+        });
+            
+        
     </script>
 </body>
 </html>
